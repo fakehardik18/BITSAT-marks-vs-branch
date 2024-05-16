@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITSAT marks vs branch</title>
+    <!-- Bootstrap CSS -->
+    <link rel="icon" type="image/x-icon" src="icon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for the navbar */
+        body {
+            background-color: #1e1e1e;
+            /* Dark background color */
+            color: #ffffff;
+            /* White text color */
+        }
+
+        .navbar-custom {
+            background-color: #343a40;
+            /* Dark navbar color */
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-nav .nav-link {
+            color: #ffffff;
+            /* White text color */
+        }
+
+        .navbar-custom .navbar-nav .nav-link:hover {
+            color: #a8a8a8;
+            /* Light gray text color on hover */
+        }
+
+        .red-text {
+            color: red;
+            /* Red text color */
+        }
+
+        .card-custom {
+            background-color: #343a40;
+            /* Dark card background color */
+            color: #ffffff;
+            /* White text color */
+        }
+
+        .green-text {
+            color: #28a745 !important;
+            /* Green text color */
+        }
+
+        .red-text {
+            color: #dc3545 !important;
+            /* Red text color */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-red navbar-custom">
+        <div class="container">
+            <a class="navbar-brand mr-auto" href="#">BITSAT marks vs branch</a>
+            <!-- Updated button with additional text below it -->
+            <div class="ml-auto">
+                <button class="btn btn-success"
+                    onClick="location.href='https://www.reddit.com/r/CuriousAspirants/'">Join
+                    r/CuriousAspirants</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-3 text-center">
+        <h2 class="green-text">Ranking data is based on last year data</h2>
+        <h2 class="red-text" style="font-size: large;">Adjust Inflation % to get rough idea for this year</h2>
+        <form>
+            <div class="form-group">
+                <div class="container mt-3">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="number" class="form-control" placeholder="Enter marks out of 390"
+                                    aria-label="Marks" id="marks" required style="padding-right: 10px;">
+                                <input type="number" class="form-control" placeholder="Enter inflation %"
+                                    aria-label="Inflation" id='inflation' required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="checkEligibility()">Submit</button>
+        </form>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card card-custom" id="PilaniCampus">
+                    <div class="card-body">
+                        <h5 class="card-title">Pilani Campus</h5>
+                        <ul class="list-unstyled">
+                            <li id="course1">B.E. Chemical</li>
+                            <li id="course2">B.E. Civil</li>
+                            <li id="course3">B.E. Electrical & Electronics</li>
+                            <li id="course4">B.E. Mechanical</li>
+                            <li id="course5">B.E. Computer Science </li>
+                            <li id="course6">B.E. Electronics & Instrumentation</li>
+                            <li id="course7">B.E. Electronics & Communication </li>
+                            <li id="course8">B.E. Manufacturing</li>
+                            <li id="course9">B.Pharm</li>
+                            <li id="course10">M.Sc. Biological Sciences</li>
+                            <li id="course11">M.Sc. Chemistry</li>
+                            <li id="course12">M.Sc. Economics</li>
+                            <li id="course13">M.Sc. Mathematics </li>
+                            <li id="course14">M.Sc. Physics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-custom" id="GoaCampus">
+                    <div class="card-body">
+                        <h5 class="card-title">Goa Campus</h5>
+                        <ul class="list-unstyled">
+                            <li id="course15">B.E. Chemical</li>
+                            <li id="course16">B.E. Electrical & Electronics</li>
+                            <li id="course17">B.E. Mechanical</li>
+                            <li id="course18">B.E. Computer Science </li>
+                            <li id="course19">B.E. Electronics & Instrumentation</li>
+                            <li id="course20">B.E. Electronics & Communication </li>
+                            <li id="course21">M.Sc. Biological Sciences</li>
+                            <li id="course22">M.Sc. Chemistry</li>
+                            <li id="course23">M.Sc. Economics</li>
+                            <li id="course24">M.Sc. Mathematics </li>
+                            <li id="course25">M.Sc. Physics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-custom" id="HyderabadCampus">
+                    <div class="card-body">
+                        <h5 class="card-title">Hyderabad Campus</h5>
+                        <ul class="list-unstyled">
+                            <li id="course26">B.E. Chemical</li>
+                            <li id="course27">B.E. Civil</li>
+                            <li id="course28">B.E. Electrical & Electronics</li>
+                            <li id="course29">B.E. Mechanical</li>
+                            <li id="course30">B.E. Computer Science </li>
+                            <li id="course31">B.E. Electronics & Instrumentation</li>
+                            <li id="course32">B.E. Electronics & Communication </li>
+                            <li id="course33">B.Pharm</li>
+                            <li id="course34">M.Sc. Biological Sciences</li>
+                            <li id="course35">M.Sc. Chemistry</li>
+                            <li id="course36">M.Sc. Economics</li>
+                            <li id="course37">M.Sc. Mathematics </li>
+                            <li id="course38">M.Sc. Physics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function checkEligibility() {
+            var marks = document.getElementById('marks').value;
+            var inflation = document.getElementById("inflation").value;
+            console.log(marks)
+            console.log(inflation)
+            var cutoffs = {
+                'course1': 224,
+                'course2': 213,
+                'course3': 272,
+                'course4': 244,
+                'course5': 331,
+                'course6': 266,
+                'course7': 296,
+                'course8': 220,
+                'course9': 153,
+                'course10': 212,
+                'course11': 213,
+                'course12': 257,
+                'course13': 236,
+                'course14': 235,
+                'course15': 209,
+                'course16': 252,
+                'course17': 223,
+                'course18': 295,
+                'course19': 244,
+                'course20': 267,
+                'course21': 204,
+                'course22': 205,
+                'course23': 239,
+                'course24': 221,
+                'course25': 222,
+                'course26': 207,
+                'course27': 204,
+                'course28': 251,
+                'course29': 218,
+                'course30': 284,
+                'course31': 244,
+                'course32': 265,
+                'course33': 135,
+                'course34': 204,
+                'course35': 205,
+                'course36': 236,
+                'course37': 219,
+                'course38': 219
+
+
+            };
+            for (var course in cutoffs) {
+                var element = document.getElementById(course);
+                var increase = (marks * inflation) / 100
+                var BranchMarks = parseInt((cutoffs[course] * inflation) / 100) + cutoffs[course]
+                if (parseInt(marks) >= BranchMarks) {
+                    element.classList.remove('red-text');
+                    element.classList.add('green-text');
+                } else {
+                    element.classList.remove('green-text');
+                    element.classList.add('red-text');
+                }
+            }
+        }
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };        
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
+
+</body>
+
+</html>
